@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diamond Collector</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+            Diamond Collector!!!
+        </header>
+        <div id="main">
+
+            <p id="p1">
+                Random number is generated when page is loaded.
+            </p>
+            <p id="p2"> 
+                There are 4 Diamonds below, by choosing one of them you will increase your total score by that number.
+                If you match your number and the computer generated number you will win, otherwise you'll lose.
+                The game will restart after each win or lose.
+            </p>
+            <p id="p3">
+                To find out who will win the game, LET'S START the GAME.
+            </p>
+            <h1>
+                GOOD LUCK!!!!!
+            </h1>
+
+        </div>
+
+        <div id="score"> Score: </div>
+
+        <div>
+            <div id="wins"> WINS: 
+                <span id="Wins"> 0 </span>
+            </div>
+
+            <div id="losses"> LOSSES: 
+                <span id="Losses"> 0 </span>
+            </div>
+        </div>
+
+        <ul id="images">
+            <li> <img src="https://s3.envato.com/files/a1478306-0182-4f69-81a6-2805104e4489/inline_image_preview.jpg"
+                    width="180px" height="100px" id="blueDiamond"> </li>
+            <li> <img src="https://www.krikawa.com/pages/images/diamonds/fancy-yellow-diamonds(1).jpg" width="180px"
+                    height="100px" id="yellowDiamond"> </li>
+            <li> <img src="https://amp.businessinsider.com/images/53eb3f6eeab8ea304370d9f6-750-517.jpg" width="180px"
+                    height="100px" id="redDiamond"> </li>
+            <li> <img
+                    src="https://st.depositphotos.com/1000559/4158/i/950/depositphotos_41583937-stock-photo-set-of-round-diamonds.jpg"
+                    width="180px" height="100px" id="purpleDiamond"> </li>
+        </ul>
+
+        <div id="total-score"> Total Score: 
+            <span id="user-score">  </span>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<script src="./assets/javascript/game.js"></script>
+
+</html>
