@@ -5,7 +5,7 @@
 // CREATE IF/ELSE STATEMENT SAYING IF THE SCORE MATCHES THE TOTAL SCORE WINS++, ELSE LOSSES++,
 // AFTER EACH WINS AND LOOSES REST THE GAME WITH ANOTHER RANDOM NUMBER.
 
-$(document).ready(function(){
+
 
     //Global Variable
     var blueDiamond = 0;
@@ -20,70 +20,89 @@ $(document).ready(function(){
     var userScore = 0;
 
     //Functions
-    function Diamonds() {
+    function diamonds() {
         blueDiamond = Math.floor(Math.random() * 12) + 1;
         redDiamond = Math.floor(Math.random() * 12) + 1;
         yellowDiamond = Math.floor(Math.random() * 12) + 1;
         purpleDiamond = Math.floor(Math.random() * 12) + 1;
+        computerScore = Math.floor(Math.random() * 120) + 19;
+    $("#score").html(computerScore);
     }
-    Diamonds();
+    diamonds();
     function reset() {
         bluedDiamond = 0;
         redDiamond = 0;
         yellowDiamond = 0;
         purpleDiamond = 0;
-
-        Diamonds();
+        userScore = 0;
+        computerScore = 0;
+        diamonds();
     }
 
     //COMPUTER SCORE GENeRATED
 
-    computerScore = Math.floor(Math.random() * 120) + 19;
-    $("#score").append(computerScore);
+    // computerScore = Math.floor(Math.random() * 120) + 19;
+    // $("#score").append(computerScore);
 
     //IMAGES BEING GENERATED RANDOM NUMBER
-
-    console.log("blue " + blueDiamond);
-
-    $("#blueDiamond").click(function () {
-        userScore += blueDiamond;
-        console.log("BLUE " + userScore);
-        $("#user-score").text(userScore);
-
-    })
-    $("#redDiamond").click(function () {
-        userScore += redDiamond;
-        console.log("RED " + userScore);
-        $("#user-score").text(userScore);
-
-    })
-    $("#yellowDiamond").click(function () {
-        userScore += yellowDiamond;
-        console.log("YELLOW " + userScore);
-        $("#user-score").text(userScore);
-
-    })
-    $("#purpleDiamond").click(function () {
-        userScore += purpleDiamond;
-        console.log("PURPLE " + userScore);
-        $("#user-score").text(userScore);
-
-    })
-
-    console.log("usc: " + userScore)
-    console.log("css: " + computerScore)
-
+    function iftest() {
     if (userScore === computerScore) {
-        alert("you win")
+        alert("you win");
         wins++;
+        document.getElementById("Wins").innerHTML = wins
         reset();
     }
 
     if (userScore > computerScore) {
         alert("you loose");
-        losses++;
+        losses++
+        $("#Losses").text(losses)
         reset();
     }
+}
+    console.log("blue " + blueDiamond);
+$(document).ready(function(){
+    $("#blueDiamond").click(function () {
+        userScore += blueDiamond;
+        console.log("BLUE " + userScore);
+        $("#user-score").text(userScore);
+        iftest()
+    })
+    $("#redDiamond").click(function () {
+        userScore += redDiamond;
+        console.log("RED " + userScore);
+        $("#user-score").text(userScore);
+        iftest()
+    })
+    $("#yellowDiamond").click(function () {
+        userScore += yellowDiamond;
+        console.log("YELLOW " + userScore);
+        $("#user-score").text(userScore);
+        iftest()
+    })
+    $("#purpleDiamond").click(function () {
+        userScore += purpleDiamond;
+        console.log("PURPLE " + userScore);
+        $("#user-score").text(userScore);
+        iftest()
+    })
+
+    // console.log("usc: " + userScore)
+    // console.log("css: " + computerScore)
+
+    // if (userScore === computerScore) {
+    //     alert("you win");
+    //     document.getElementById("Wins").innerHTML = wins++
+    //     //wins++;
+    //     reset();
+    // }
+
+    // if (userScore > computerScore) {
+    //     alert("you loose");
+    //     document.getElementById("Losses").innerHTML = losses++
+    //     losses++;
+    //     reset();
+    // }
 });
 
 
